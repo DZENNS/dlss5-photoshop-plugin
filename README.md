@@ -1,43 +1,46 @@
 # DLSS5 Native — Photoshop plugin for Mac
 
-**Только macOS / Apple Silicon (ARM64). Плагин НЕ портирован на Windows. Windows-сборки нет. Intel Mac не поддерживается.**
+**English** | [Русский](README.ru.md)
 
-**macOS / Apple Silicon ONLY. This plugin has NOT been ported to Windows. No Windows build is available. Intel Macs are unsupported.**
+**macOS / Apple Silicon (ARM64) ONLY. This plugin has NOT been ported to Windows. No Windows build is available. Intel Macs are unsupported.**
 
-Нативный плагин для обработки фотографий в Adobe Photoshop: DLSS Neural Rendering через независимый MLX/Metal-перенос, сравнение до/после и Real-ESRGAN ×2. Это не официальный продукт NVIDIA или Adobe; результат не гарантированно идентичен NVIDIA runtime.
+A native Adobe Photoshop plugin for photo processing: DLSS Neural Rendering through an independent MLX/Metal port, before/after comparison, and Real-ESRGAN ×2. This is not an official NVIDIA or Adobe product, and its output is not guaranteed to match the NVIDIA runtime.
 
-## Скачать и установить
+## Download and installation
 
-- [Готовая сборка v0.9.4](https://github.com/DZENNS/dlss5-photoshop-plugin/releases/tag/v0.9.4)
-- **[Подробная инструкция на русском: модель → плагин → Photoshop](docs/INSTALL_RU.md)**
-- **[English installation and model setup](docs/INSTALL_EN.md)**
-- [Сборка из исходников / Build from source](docs/BUILD.md)
+- [Download the compiled v0.9.4 release](https://github.com/DZENNS/dlss5-photoshop-plugin/releases/tag/v0.9.4)
+- **[Step-by-step installation and model setup](docs/INSTALL_EN.md)**
+- [Build from source](docs/BUILD.md)
+- [Russian installation guide](docs/INSTALL_RU.md)
 
-В ZIP находится скомпилированный `.plugin`, Real-ESRGAN и команда настройки. **Весов NVIDIA внутри нет.** Для DLSS нужен собственный совместимый пакет HT `NR.dlss` / `NeuralRendering.dlssmodel`, содержащий `manifest.json` и `weights.safetensors`. Команда `Configure.command` добавит пакет в новую копию плагина и выполнит локальную ad-hoc подпись. DLL нельзя просто скопировать внутрь плагина: macOS её не исполняет.
+The release ZIP contains the compiled `.plugin`, Real-ESRGAN, and a setup command. **NVIDIA weights are not included.** To use DLSS, supply your own compatible HT model folder, named `NR.dlss` or `NeuralRendering.dlssmodel`, containing `manifest.json` and `weights.safetensors`. `Configure.command` copies the model into a new plugin bundle and signs it locally with an ad-hoc signature. Simply copying a Windows DLL into the plugin will not work: macOS does not execute it.
 
-No NVIDIA DLLs or extracted NVIDIA weights are distributed. Supply your own compatible HT model locally; see the guides. Adobe SDK headers are not included. The release is ad-hoc signed, not Developer ID signed or notarized.
+No NVIDIA DLLs or extracted NVIDIA weights are distributed. Adobe SDK headers are not included. The release is ad-hoc signed, without Developer ID signing or notarization. See the installation guide for macOS Privacy & Security approval steps.
 
-## Возможности
+## Features
 
-- Запуск: **Filter → DLSS5 → DLSS5 Native**.
-- По умолчанию DLSS выключен; Natural, Standard, Cinematic, Neutral.
-- Сравнение до/после, перетаскиваемый разделитель, масштабирование и перемещение превью.
-- Автоматическое или ручное превью, отмена обработки.
-- Применение результата на новый слой.
-- Пресеты. Между запусками отдельно сохраняется только «Автоматически».
-- Рабочее разрешение: 320 / 384 / 512 / 640 / 768 / 960 / 1280 / 1920 px.
-- Двойной клик по держателю ползунка возвращает параметр к исходному значению.
-- Русский интерфейс при русском Photoshop, английский при любом другом языке.
-- Real-ESRGAN ×2 увеличивает Image Size всего документа; нужен полноразмерный слой без выделения.
+- Launch from **Filter → DLSS5 → DLSS5 Native**.
+- DLSS is off by default; choose Natural, Standard, Cinematic, or Neutral.
+- Before/after comparison with a draggable divider, preview zoom, and pan.
+- Automatic or manual preview, with processing cancellation.
+- Apply the result to a new layer.
+- Named presets. Only the Automatic checkbox is remembered separately between sessions.
+- Processing resolutions: 320 / 384 / 512 / 640 / 768 / 960 / 1280 / 1920 px.
+- Double-click a slider thumb to restore that parameter's default value.
+- Russian UI when Photoshop is in Russian; English for all other Photoshop languages.
+- Optional Real-ESRGAN ×2 doubles the document Image Size; requires a full-canvas layer without a selection.
 
-## Требования и ограничения
+## Requirements and limitations
 
-Apple Silicon, macOS 15.8+, Photoshop с поддержкой нативных ARM64 filter plugins, RGB 8 бит. Пользовательская проверка выполнялась в Photoshop Beta; совместимость со всеми версиями Photoshop не заявляется. Windows и Intel Mac не поддерживаются. Плагин работает только с изображениями.
+Apple Silicon, macOS 15.8+, Photoshop with native ARM64 filter plugin support, and RGB 8-bit images. The workflow was user-tested in Photoshop Beta; compatibility with every Photoshop version is not claimed. Windows and Intel Macs are unsupported. This plugin processes still images only.
 
-DLSS обрабатывает изображение в выбранном рабочем разрешении; увеличение этого значения не равно апскейлу документа. Реальное увеличение размера — отдельный Real-ESRGAN ×2. Генеративная обработка может менять детали и внешность; проверяйте результат при 100%.
+DLSS runs at the selected processing resolution. Increasing this setting does not upscale the document; actual enlargement is provided separately by Real-ESRGAN ×2. Generative processing can change details and facial appearance, so inspect the result at 100% zoom.
 
-## Исходники и лицензии
+## Source code and licenses
 
-`native/` — интерфейс AppKit, filter entry и создание слоя; `Sources/PhotoshopNative/` — Swift/Metal-мост; `Sources/ScreenCore/` — настройки; `Vendor/MLX-DLSS/` — используемый исходный перенос. [Уведомления](THIRD_PARTY_NOTICES.md).
+- `native/`: AppKit interface, native filter entry point, and new-layer handling.
+- `Sources/PhotoshopNative/`: Swift/Metal engine bridge.
+- `Sources/ScreenCore/`: processing settings.
+- `Vendor/MLX-DLSS/`: the vendored MLX/Metal port.
 
-Основной исходный код — MIT; MLX-DLSS — Apache 2.0; сторонние компоненты сохраняют свои лицензии. Лицензия репозитория **не распространяется на веса NVIDIA и Adobe SDK**. Не загружайте в issues пользовательские фотографии, SDK, DLL или модели NVIDIA.
+See [third-party notices](THIRD_PARTY_NOTICES.md). The main project source is MIT-licensed; MLX-DLSS is Apache 2.0; other components retain their respective licenses. The repository license **does not cover NVIDIA weights or the Adobe SDK**. Do not upload private photographs, SDK files, NVIDIA DLLs, or NVIDIA models to issues.
