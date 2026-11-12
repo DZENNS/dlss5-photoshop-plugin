@@ -1,0 +1,298 @@
+{
+  "PiPLs": [
+    {
+      "Kind": "Filter",
+      "Name": "DLSS5 Native",
+      "Category": "DLSS5",
+      "Version": 4,
+      "SubVersion": 0,
+      "ComponentVersionShortNum": 1,
+      "ComponentVersionMinorRevNum": 9,
+      "ComponentVersionDotRevNum": 0,
+      "ComponentName": "DLSS5 Native",
+      "CodeMacARM64": "PluginMain",
+      "SupportedModes": {
+        "RGBColor": true
+      },
+      "EnableInfo": "in (PSHOP_ImageMode, RGBMode) && (PSHOP_ImageDepth == 8)",
+      "PlugInMaxSize": [
+        16384,
+        16384
+      ],
+      "MonitorScalingAware": true,
+      "FilterLayerSupport": true,
+      "FilterCaseInfo": [
+        {
+          "InputHandling": "InWhiteMat",
+          "OutputHandling": "OutWhiteMat",
+          "WriteOutsideSelection": false,
+          "FiltersLayerMasks": false,
+          "WorksWithBlankData": false,
+          "DontCopySourceToDestination": false
+        },
+        {
+          "InputHandling": "InWhiteMat",
+          "OutputHandling": "OutWhiteMat",
+          "WriteOutsideSelection": false,
+          "FiltersLayerMasks": false,
+          "WorksWithBlankData": false,
+          "DontCopySourceToDestination": false
+        },
+        {
+          "InputHandling": "InWhiteMat",
+          "OutputHandling": "OutWhiteMat",
+          "WriteOutsideSelection": false,
+          "FiltersLayerMasks": false,
+          "WorksWithBlankData": false,
+          "DontCopySourceToDestination": false
+        },
+        {
+          "InputHandling": "InWhiteMat",
+          "OutputHandling": "OutWhiteMat",
+          "WriteOutsideSelection": false,
+          "FiltersLayerMasks": false,
+          "WorksWithBlankData": false,
+          "DontCopySourceToDestination": false
+        },
+        {
+          "InputHandling": "InWhiteMat",
+          "OutputHandling": "OutWhiteMat",
+          "WriteOutsideSelection": false,
+          "FiltersLayerMasks": false,
+          "WorksWithBlankData": false,
+          "DontCopySourceToDestination": false
+        },
+        {
+          "InputHandling": "InWhiteMat",
+          "OutputHandling": "OutWhiteMat",
+          "WriteOutsideSelection": false,
+          "FiltersLayerMasks": false,
+          "WorksWithBlankData": false,
+          "DontCopySourceToDestination": false
+        },
+        {
+          "InputHandling": "InWhiteMat",
+          "OutputHandling": "OutWhiteMat",
+          "WriteOutsideSelection": false,
+          "FiltersLayerMasks": false,
+          "WorksWithBlankData": false,
+          "DontCopySourceToDestination": false
+        }
+      ],
+      "HasTerminology": {
+        "ClassID": "DsP4",
+        "EventID": "DsP4",
+        "ScopeString": "a8a86c1f-e2e0-4356-94ad-d15550000004"
+      },
+      "Terminology": {
+        "MajorVersion": 1,
+        "MinorVersion": 0,
+        "Language": 0,
+        "ScriptCode": 0,
+        "Suites": [
+          {
+            "SuitName": "tommy",
+            "SuitID": "DsP4",
+            "SuitLevel": 1,
+            "SuitVersion": 1,
+            "SuitDescription": "Adobe example plug-ins",
+            "Events": [
+              {
+                "EventName": "DLSS5 Preview",
+                "EventDescription": "no commment",
+                "ClassID": "DsP4",
+                "EventType": "DsP4",
+                "ReplyType": "null",
+                "DirectParamType": "#ImR",
+                "DirectParamFlagBits": {
+                  "DirectParamOptional": true,
+                  "ListOfItems": false,
+                  "Enumerated": true,
+                  "ChangesState": true
+                },
+                "Parameters": []
+              }
+            ],
+            "Enumerations": []
+          }
+        ]
+      }
+    },
+    {
+      "Kind": "Actions",
+      "Name": "DLSS5 Layer Service",
+      "Category": "**Hidden**",
+      "Version": 1,
+      "SubVersion": 0,
+      "ComponentVersionShortNum": 1,
+      "ComponentVersionMinorRevNum": 9,
+      "ComponentVersionDotRevNum": 0,
+      "ComponentName": "DLSS5 Layer Service",
+      "CodeMacARM64": "AutoPluginMain",
+      "EnableInfo": "in (PSHOP_ImageMode, RGBMode) && (PSHOP_ImageDepth == 8)",
+      "HasTerminology": {
+        "ClassID": "DsA2",
+        "EventID": "DsA2",
+        "ScopeString": "a8a86c1f-e2e0-4356-94ad-d15550000003"
+      },
+      "Terminology": {
+        "MajorVersion": 1,
+        "MinorVersion": 0,
+        "Language": 0,
+        "ScriptCode": 0,
+        "Suites": [
+          {
+            "SuiteName": "Testing",
+            "SuitDescription": "Adobe example plug-ins",
+            "SuiteID": "DsA2",
+            "SuiteLevel": 1,
+            "SuiteVersion": 1,
+            "Events": [
+              {
+                "EventName": "Automation Filter",
+                "EventDescription": "No comment",
+                "ClassID": "DsA2",
+                "EventType": "DsA2",
+                "ReplyType": "null",
+                "DirectParamType": "#ImR",
+                "DirectParamFlagBits": {
+                  "DirectParamOptional": true,
+                  "ListOfItems": false,
+                  "Enumerated": true,
+                  "ChangesState": true
+                },
+                "Parameters": []
+              }
+            ],
+            "Enumerations": []
+          }
+        ]
+      },
+      "Persistent": true,
+      "Messages": {
+        "NoStartupRequired": false,
+        "NoShutdownRequired": false,
+        "PurgeCache": false,
+        "AcceptProperty": true
+      }
+    },
+    {
+      "Kind": "Filter",
+      "Name": "DLSS5 Layers Pixel Engine",
+      "Category": "**Hidden**",
+      "Version": 4,
+      "SubVersion": 0,
+      "ComponentVersionShortNum": 1,
+      "ComponentVersionMinorRevNum": 9,
+      "ComponentVersionDotRevNum": 0,
+      "ComponentName": "DLSS5 Layers Pixel Engine",
+      "CodeMacARM64": "PluginMain",
+      "SupportedModes": {
+        "RGBColor": true
+      },
+      "EnableInfo": "in (PSHOP_ImageMode, RGBMode) && (PSHOP_ImageDepth == 8)",
+      "PlugInMaxSize": [
+        16384,
+        16384
+      ],
+      "MonitorScalingAware": true,
+      "FilterLayerSupport": true,
+      "FilterCaseInfo": [
+        {
+          "InputHandling": "InWhiteMat",
+          "OutputHandling": "OutWhiteMat",
+          "WriteOutsideSelection": false,
+          "FiltersLayerMasks": false,
+          "WorksWithBlankData": false,
+          "DontCopySourceToDestination": false
+        },
+        {
+          "InputHandling": "InWhiteMat",
+          "OutputHandling": "OutWhiteMat",
+          "WriteOutsideSelection": false,
+          "FiltersLayerMasks": false,
+          "WorksWithBlankData": false,
+          "DontCopySourceToDestination": false
+        },
+        {
+          "InputHandling": "InWhiteMat",
+          "OutputHandling": "OutWhiteMat",
+          "WriteOutsideSelection": false,
+          "FiltersLayerMasks": false,
+          "WorksWithBlankData": false,
+          "DontCopySourceToDestination": false
+        },
+        {
+          "InputHandling": "InWhiteMat",
+          "OutputHandling": "OutWhiteMat",
+          "WriteOutsideSelection": false,
+          "FiltersLayerMasks": false,
+          "WorksWithBlankData": false,
+          "DontCopySourceToDestination": false
+        },
+        {
+          "InputHandling": "InWhiteMat",
+          "OutputHandling": "OutWhiteMat",
+          "WriteOutsideSelection": false,
+          "FiltersLayerMasks": false,
+          "WorksWithBlankData": false,
+          "DontCopySourceToDestination": false
+        },
+        {
+          "InputHandling": "InWhiteMat",
+          "OutputHandling": "OutWhiteMat",
+          "WriteOutsideSelection": false,
+          "FiltersLayerMasks": false,
+          "WorksWithBlankData": false,
+          "DontCopySourceToDestination": false
+        },
+        {
+          "InputHandling": "InWhiteMat",
+          "OutputHandling": "OutWhiteMat",
+          "WriteOutsideSelection": false,
+          "FiltersLayerMasks": false,
+          "WorksWithBlankData": false,
+          "DontCopySourceToDestination": false
+        }
+      ],
+      "HasTerminology": {
+        "ClassID": "DsN2",
+        "EventID": "DsN2",
+        "ScopeString": "a8a86c1f-e2e0-4356-94ad-d15550000002"
+      },
+      "Terminology": {
+        "MajorVersion": 1,
+        "MinorVersion": 0,
+        "Language": 0,
+        "ScriptCode": 0,
+        "Suites": [
+          {
+            "SuitName": "tommy",
+            "SuitID": "DsN2",
+            "SuitLevel": 1,
+            "SuitVersion": 1,
+            "SuitDescription": "Adobe example plug-ins",
+            "Events": [
+              {
+                "EventName": "DLSS5 Pixel Engine",
+                "EventDescription": "no commment",
+                "ClassID": "DsN2",
+                "EventType": "DsN2",
+                "ReplyType": "null",
+                "DirectParamType": "#ImR",
+                "DirectParamFlagBits": {
+                  "DirectParamOptional": true,
+                  "ListOfItems": false,
+                  "Enumerated": true,
+                  "ChangesState": true
+                },
+                "Parameters": []
+              }
+            ],
+            "Enumerations": []
+          }
+        ]
+      }
+    }
+  ]
+}

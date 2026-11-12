@@ -1,0 +1,16 @@
+.DS_Store
+.build/
+build/
+dist/
+Models/
+adobe-photoshop-sdk/
+*.dll
+*.dylib
+*.metallib
+*.safetensors
+*.onnx
+*.zip
+*.dlss/
+*.dlssmodel/
+__pycache__/
+.venv/
